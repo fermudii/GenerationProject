@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.generationc20.bookfolks.dao.UserRepository;
 import com.generationc20.bookfolks.model.User;
 
+
 @Service
 public class UserServiceImpl implements UserService{
 
@@ -20,19 +21,29 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
-	public Optional<User> getById(Integer id) {
-		return repository.findById(id);
+	public Optional<User> getById(String username) {
+		return repository.findById(username);
 	}
 	
 	@Override
-	public User update(Integer id, User user) {
-		//NotTerminated
-		return null;
+	public User update(String username, User user) {
+		User userDB = getById(username).get();
+		userDB.setUsername(user.getUsername());
+		userDB.setName(user.getName());
+		userDB.setLastName(user.getLastName());
+		userDB.setAge(user.getAge());
+		userDB.setGender(user.getGender());
+		userDB.setDescription(user.getDescription());
+		userDB.setPassword(user.getPassword());
+		userDB.setEmail(user.getEmail());
+		userDB.setUrlImage(user.getUrlImage());
+		return repository.save(userDB);
+		
 	}
 	
 	@Override
-	public void remove(Integer id) {
-		repository.deleteById(id);
+	public void remove(String username) {
+		repository.deleteById(username);
 		
 	}
 }

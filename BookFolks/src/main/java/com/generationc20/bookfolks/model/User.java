@@ -7,14 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name= "user")
 public class User {
 
-	@Id
+	
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Integer id;
+	@Id
 	private String username;
 	private String name;
 	private String lastName;
@@ -24,6 +27,7 @@ public class User {
 	private String password;
 	private String email;
 	private String urlImage;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date creationDateTime;
 	
 	public User() {}

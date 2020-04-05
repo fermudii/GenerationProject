@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name= "story")
@@ -18,6 +20,7 @@ public class Story {
 	private String title;
 	private String synopsis;
 	private String urlImage;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date creationDateTime;
 	
 	//Foreign keys

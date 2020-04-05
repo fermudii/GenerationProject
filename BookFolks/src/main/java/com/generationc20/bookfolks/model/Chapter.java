@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name= "chapter")
@@ -18,6 +20,7 @@ public class Chapter {
 	private int id_continuity;
 	private String title;
 	private String content;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date creationDateTime;
 	
 	//Foreign Keys

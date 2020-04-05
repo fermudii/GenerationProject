@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name= "textType")
@@ -16,6 +18,7 @@ public class TextType {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Integer id;
 	private int type;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date creationDateTime;
 	
 	public TextType() {}

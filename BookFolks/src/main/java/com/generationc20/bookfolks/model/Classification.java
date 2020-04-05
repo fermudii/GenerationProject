@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name= "classification")
@@ -15,6 +17,7 @@ public class Classification {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Integer id;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date creationDateTime;
 	
 	//Foreign keys
