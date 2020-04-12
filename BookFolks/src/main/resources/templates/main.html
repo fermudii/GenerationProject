@@ -26,7 +26,7 @@
 		<h6 th:if="${story.idGenre == 3}">Minifiction</h6>
 		<p th:text="${story.author}"></p>
 		<a th:href="@{/story/showStory(id=${story.id})}">View</a>
-		<a th:href="@{/story/deleteStory(id=${story.id})}">Delete Story</a>
+		
 	</div>
 	<script th:if="${success}">
 						setTimeout(function(){

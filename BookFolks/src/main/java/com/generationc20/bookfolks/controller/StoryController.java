@@ -78,4 +78,11 @@ public class StoryController {
 			}
 		return"/allMyStories";
 	}
+	
+	@GetMapping("/showStory")
+	public String getStory(@RequestParam("id") Integer id, @SessionAttribute("user")User user,Model model) {
+	
+		model.addAttribute("story",service.getById(id).get());
+		return "/story";
+	}
 }
