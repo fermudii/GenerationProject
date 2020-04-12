@@ -14,14 +14,13 @@ import javax.persistence.TemporalType;
 @Table(name= "user")
 public class User {
 
-	
+	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Integer id;
-	@Id
 	private String username;
 	private String name;
 	private String lastName;
-	private int age;
+	private Integer age;
 	private String gender;
 	private String description;
 	private String password;
@@ -32,9 +31,8 @@ public class User {
 	
 	public User() {}
 
-	public User(Integer id, String username, String name, String lastName, int age, String gender, String description,
+	public User(Integer id, String username, String name, String lastName, Integer age, String gender, String description,
 			String password, String email, String urlImage, Date creationDateTime) {
-		super();
 		this.id = id;
 		this.username = username;
 		this.name = name;
@@ -80,11 +78,11 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 

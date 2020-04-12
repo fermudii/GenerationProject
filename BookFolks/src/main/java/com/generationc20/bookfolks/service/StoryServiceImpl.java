@@ -1,5 +1,6 @@
 package com.generationc20.bookfolks.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,11 @@ public class StoryServiceImpl implements StoryService{
 	@Override
 	public Story save(Story story) {
 		return repository.save(story);
+		}
+	
+	@Override
+	public List<Story> getAll() {
+		return repository.findAll();
 		}
 	
 	@Override
