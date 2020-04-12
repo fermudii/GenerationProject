@@ -1,5 +1,6 @@
 package com.generationc20.bookfolks.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,20 +22,23 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
-	public Optional<User> getById(String username) {
-		return repository.findById(username);
+	public List<User> getAll() {
+		return repository.findAll();
 	}
 	
 	@Override
-	public User update(String username, User user) {
-		User userDB = getById(username).get();
-		userDB.setUsername(user.getUsername());
+	public Optional<User> getById(Integer id) {
+		return repository.findById(id);
+	}
+	
+	@Override
+	public User update(Integer id, User user) {
+		User userDB = getById(id).get();
 		userDB.setName(user.getName());
 		userDB.setLastName(user.getLastName());
 		userDB.setAge(user.getAge());
 		userDB.setGender(user.getGender());
 		userDB.setDescription(user.getDescription());
-		userDB.setPassword(user.getPassword());
 		userDB.setEmail(user.getEmail());
 		userDB.setUrlImage(user.getUrlImage());
 		return repository.save(userDB);
@@ -42,8 +46,8 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
-	public void remove(String username) {
-		repository.deleteById(username);
+	public void remove(Integer id) {
+		repository.deleteById(id);
 		
 	}
 }

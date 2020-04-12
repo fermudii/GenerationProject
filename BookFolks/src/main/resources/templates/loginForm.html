@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>BookFolks</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.min.css}"></link>
+</head>
+<body>
+	<div>
+		<h1>Get Started</h1>
+	</div>
+	<form th:action="@{/doLogin}" method="POST" th:object="${user}">
+		<div>
+			<label for="txtUserName">Username</label>
+			<input type="text" id="txtUserName" name="username">
+		</div>
+		<div>
+			<label for="txtPassword">Password</label>
+			<input type="password" id="txtPassword" name="password">
+		</div>
+		<input type="submit" value="Accept">
+	</form>
+		<div id="alert"class="alert alert-danger" role="alert" th:if="${errorPassword}" th:text="${errorPassword}"></div>
+	<div id="alert"class="alert alert-warning" role="alert" th:if="${errorUsername}" th:text="${errorUsername}"></div>
+	<script th:if="${errorPassword}">
+						setTimeout(function(){
+							document.getElementById("alert").remove();
+						}, 2000);
+	</script>
+	<script th:if="${errorUsername}">
+						setTimeout(function(){
+							document.getElementById("alert").remove();
+						}, 2000);
+	</script>
+	
+</body>
+
+</html>

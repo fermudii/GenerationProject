@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>BookFolks</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.min.css}"></link>
+</head>
+<body>
+	<div>
+		<h1>Get Started</h1>
+	</div>
+	<form action="/user/signup" method="POST">
+	
+		<div>
+			<label for="txtUserName">Username</label>
+			<input type="text" id="txtUserName" name="txtUserName">
+			
+		</div>
+		<div>
+			<label for="txtPassword">Password</label>
+			<input type="password" id="txtPassword" name="txtPassword">
+		</div>
+		<div>
+			<label for="txtConfirmPassword">Confirm Password</label>
+			<input type="password" id="txtConfirmPassword" name="txtConfirmPassword">
+		</div>
+		<div>
+			<label for="txtName">Name</label>
+			<input type="text" id="txtName" name="txtName">
+		</div>
+		<div>
+			<label for="txtLastName">Last Name</label>
+			<input type="text" id="txtLastName" name="txtLastName">
+		</div>
+		<div>
+			<label for="txtEmail">Email</label>
+			<input type="text" id="txtEmail" name="txtEmail">
+		</div>
+		
+		<input type="submit" value="Accept">
+	</form>
+		<div id="alert"class="alert alert-danger" role="alert" th:if="${errorPassword}" th:text="${errorPassword}">
+		</div>
+	<div id="alert"class="alert alert-warning" role="alert" th:if="${errorAccount}" th:text="${errorAccount}"></div>
+	<div id="alert"class="alert alert-success" role="alert" th:if="${success}" th:text="${success}"></div>
+	<a id="login" href="/user/loginForm"th:if="${success}">Get Started</a>
+	<script th:if="${errorPassword}">
+						setTimeout(function(){
+							document.getElementById("alert").remove();
+						}, 5000);
+	</script>
+	<script th:if="${errorAccount}">
+						setTimeout(function(){
+							document.getElementById("alert").remove();
+						}, 5000);
+	</script>
+	<script th:if="${success}">
+						setTimeout(function(){
+							document.getElementById("alert").remove();
+						}, 5000);
+	</script>
+	
+</body>
+
+</html>

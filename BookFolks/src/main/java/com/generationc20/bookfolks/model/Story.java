@@ -20,23 +20,25 @@ public class Story {
 	private String title;
 	private String synopsis;
 	private String urlImage;
+	private String author;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date creationDateTime;
 	
 	//Foreign keys
-	private int id_genre;
-	private int id_textType;
+	private int idGenre;
+	private int idUser;
 	
 	public Story() {}
 
-	public Story(Integer id, String title, String synopsis, String urlImage, int id_genre, int id_textType, Date creationDateTime) {
+	public Story(Integer id, String title, String synopsis, String urlImage, int idGenre, int idUser, String author, Date creationDateTime) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.synopsis = synopsis;
 		this.urlImage = urlImage;
-		this.id_genre = id_genre;
-		this.id_textType = id_textType;
+		this.idGenre = idGenre;
+		this.idUser = idUser;
+		this.author = author;
 		this.creationDateTime = creationDateTime;
 	}
 
@@ -72,20 +74,28 @@ public class Story {
 		this.urlImage = urlImage;
 	}
 
-	public int getId_genre() {
-		return id_genre;
+	public int getIdGenre() {
+		return idGenre;
 	}
 
-	public void setId_genre(int id_genre) {
-		this.id_genre = id_genre;
+	public void setIdGenre(int idGenre) {
+		this.idGenre = idGenre;
 	}
 
-	public int getId_textType() {
-		return id_textType;
+	public int getIdUser() {
+		return idUser;
 	}
 
-	public void setId_textType(int id_textType) {
-		this.id_textType = id_textType;
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
+	}
+	
+	public String getAuthor() {
+		return author;
+	}
+	
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 	
 	public Date getCreacionDateTime() {
