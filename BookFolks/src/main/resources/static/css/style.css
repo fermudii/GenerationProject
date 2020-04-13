@@ -145,3 +145,32 @@ h3 {
   max-width: 50px;
   max-height: 50px;
 }
+
+.form-control{
+border-radius: 20px;
+border-color: blue;
+}
+
+.btn-outline-secondary{
+	border-radius: 20px;
+	border-color: blue;
+	background: #faab44;
+	 border: 0; 
+	 color: black; 
+	 
+.fondo{
+	background: url(http://localhost:8080/img/patron.png);
+	background-repeat:(http://localhost:8080/img/patron.png);	
+}
+
+.imgredonda{
+	border-radius: 22px;
+}
+
+.backgroundlia{
+background-color: #FFE9CA;
+border-color: #FFE9CA;
+}
+.white{
+	color: white;
+}

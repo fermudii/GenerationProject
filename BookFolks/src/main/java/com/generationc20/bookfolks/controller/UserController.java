@@ -62,8 +62,6 @@ public class UserController {
 	
 	@PostMapping("/signup")
 	public String signUp(@RequestParam("txtUserName") String username,
-			@RequestParam("txtName") String name,
-			@RequestParam("txtLastName") String lastName,
 			@RequestParam("txtEmail") String email,
 			@RequestParam("txtPassword") String password,
 			@RequestParam("txtConfirmPassword") String confirmPassword,
@@ -81,8 +79,6 @@ public class UserController {
 			//Model
 			User user = new User();
 			user.setUsername(username);
-			user.setName(name);
-			user.setLastName(lastName);
 			user.setEmail(email);
 			user.setPassword(password);
 			user.setAge(0);
